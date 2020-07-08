@@ -1,0 +1,41 @@
+.container-fluid {
+  padding: 0;
+}
+
+#mainSlider .carousel-inner,
+#mainSlider .carousel-item {
+  height: 40vh;
+}
+
+#mainSlider .carousel-caption {
+  top: 20%;
+}
+
+#mainslider .carousel-caption p {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 100px;
+  color: #fff;
+}
+
+.main-btn {
+  background-color: #65daf9;
+  color: #fff;
+  text-transform: uppercase;
+  width: 150px;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 20px; /* metade da altura */
+  border: 3px solid transparent;
+  transition: 0.5s;
+}
+
+.main-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  border-color: #65daf9;
+}
+.carousel-indicators .active {
+  background-color: #65daf9;
+}

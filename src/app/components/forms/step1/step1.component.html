@@ -1,0 +1,60 @@
+<div id="personal-details" [formGroup]="regForm">
+  <div class="form-group col-md-4" class="mat-form-field">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Placa do Veiculo"
+        name="placa"
+        formControlName="placa"
+        style="padding: 0 15px;"
+      />
+      <mat-error>Necessario 8 caracteres.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group col-md-4" class="mat-form-field">
+    <mat-form-field>
+      <mat-select
+        placeholder="Marca do Veiculo"
+        formControlName="marca"
+        style="padding: 0 15px;"
+      >
+        <mat-option [value]="marca.id" *ngFor="let marca of marcas">
+          {{ marca.name }}</mat-option
+        >
+      </mat-select>
+      <mat-error>Necessario informar a marca do veículo.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group col-md-4" class="mat-form-field">
+    <mat-form-field>
+      <mat-select
+        placeholder="Modelo do Veiculo"
+        formControlName="modelo"
+        style="padding: 0 15px;"
+      >
+        <mat-option *ngFor="let modelo of modelos" [value]="modelo.id">
+          {{ modelo.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error>Necessario informar o modelo do veículo.</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group col-md-4" class="mat-form-field">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Ano do Modelo"
+        name="ano"
+        formControlName="ano_modelo"
+        type="number"
+        min="1951"
+        style="padding: 0 15px;"
+      />
+      <mat-error>O ano mínimo é 1951.</mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<br />
+<button type="button" class="main-btn v-middle" matStepperNext>
+  Próximo
+</button>

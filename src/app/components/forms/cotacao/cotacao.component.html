@@ -1,0 +1,62 @@
+<div id="registration" class="container">
+  <mat-card>
+    <form id="regForm" #myFormGroup [formGroup]="registrationForm">
+      <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <mat-step
+          formGroupName="veiculo"
+          [stepControl]="registrationForm.get('veiculo')"
+          state="edit"
+        >
+          <ng-template matStepLabel>Dados do Veiculo</ng-template>
+          <app-step1 (emiter)="getRegistrarionForm($event)"></app-step1>
+        </mat-step>
+        <mat-step
+          formGroupName="itens"
+          [stepControl]="registrationForm.get('itens')"
+          state="plus"
+        >
+          <ng-template matStepLabel>Lista de Peças</ng-template>
+
+        </mat-step>
+        <mat-step
+          formGroupName="dadoscliente"
+          [stepControl]="registrationForm.get('contato')"
+          state="chat"
+        >
+          <ng-template matStepLabel>Dados para Contato</ng-template>
+          <app-step3 [regForm]="registrationForm"></app-step3>
+          <button
+            type="button"
+            class="main-btn v-middle"
+            (click)="
+              openSnackBar('Pedido Enviado! Reset e Faça um novo Pedido.', 'X')
+            "
+            (click)="submit()"
+          >
+            Enviar
+          </button>
+
+          &nbsp;
+          <button
+            type="button"
+            class="main-btn v-middle"
+            (click)="myFormGroup.reset(); stepper.reset()"
+            matStepperPrevious
+          >
+            Reset
+          </button>
+        </mat-step>
+
+        <ng-template class="ng-template" matStepperIcon="edit">
+          <mat-icon>time_to_leave</mat-icon>
+        </ng-template>
+        <ng-template matStepperIcon="plus">
+          <mat-icon>event_note</mat-icon>
+        </ng-template>
+        <ng-template matStepperIcon="chat">
+          <mat-icon> contact_mail</mat-icon>
+        </ng-template>
+      </mat-horizontal-stepper>
+    </form>
+  </mat-card>
+</div>

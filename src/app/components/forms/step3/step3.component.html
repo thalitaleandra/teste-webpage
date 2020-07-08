@@ -1,0 +1,93 @@
+<div [formGroup]="regForm">
+  <div
+    class="form-group col-md-4"
+    formGroupName="dadoscliente"
+    class="mat-form-field"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Seu Nome"
+        name="name"
+        formControlName="name"
+      />
+    </mat-form-field>
+  </div>
+  <div
+    class="form-group col-md-4"
+    formGroupName="dadoscliente"
+    class="mat-form-field"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Seu Email"
+        name="email"
+        formControlName="email"
+      />
+      <mat-error>Ex: automobile@empresa.com</mat-error>
+    </mat-form-field>
+  </div>
+  <div
+    class="form-group col-md-4"
+    formGroupName="dadoscliente"
+    class="mat-form-field"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Telefone/WhatsApp"
+        type="number"
+        name="tel"
+        formControlName="telefone"
+      />
+      <mat-error>É necessário de 9 à 11 digitos.</mat-error>
+    </mat-form-field>
+  </div>
+  <div
+    class="form-group col-md-4"
+    formGroupName="dadoscliente"
+    class="mat-form-field"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Informe a Cidade"
+        name="cidade"
+        formControlName="cidade"
+      />
+      <mat-error>Informe a Cidade.</mat-error>
+    </mat-form-field>
+  </div>
+  <div
+    class="form-group col-md-4"
+    formGroupName="dadoscliente"
+    class="mat-form-field"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Informe o Estado"
+        name="estado"
+        formControlName="estado"
+      />
+      <mat-error>Informe a Estado.</mat-error>
+    </mat-form-field>
+  </div>
+  <div
+    class="form-group col-md-4"
+    formGroupName="dadoscliente"
+    class="mat-form-field"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        name="cep"
+        formControlName="cep"
+        placeholder="Informe o Cep"
+        type="number"
+      />
+      <mat-error>o CEP é composto por oito dígitos</mat-error>
+    </mat-form-field>
+  </div>
+</div>
