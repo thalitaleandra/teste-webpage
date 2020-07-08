@@ -1,5 +1,5 @@
 <div id="contact-details" [formGroup]="regForm">
-  <div class="form-group col-md-4" formGroupName="itens" class="mat-form-field">
+  <div class="form-group col-md-4" class="mat-form-field">
     <mat-form-field>
       <mat-select placeholder="Tipo de Peca" name="tipo" formControlName="tipo">
         <mat-option [value]="tipo.value" *ngFor="let tipo of tipos">
@@ -9,7 +9,7 @@
       <mat-error>Necessário informar Tipo de Peça.</mat-error>
     </mat-form-field>
   </div>
-  <div class="form-group col-md-4" formGroupName="itens" class="mat-form-field">
+  <div class="form-group col-md-4" class="mat-form-field">
     <mat-form-field>
       <mat-select
         placeholder="Estado da Peca"
@@ -23,14 +23,10 @@
       <mat-error>Necessário informar Estado da Peça.</mat-error>
     </mat-form-field>
   </div>
-  <div class="form-group col-md-4" formGroupName="itens" class="mat-form-field">
+  <div class="form-group col-md-4" class="mat-form-field">
     <mat-form-field>
       <mat-label>Descreva sua peça</mat-label>
-      <textarea
-        matInput
-        name="descricao"
-        formControlName="descricao"
-      ></textarea>
+      <textarea matInput name="descricao" formArrayName="descricao"></textarea>
     </mat-form-field>
   </div>
   <div class="form-group col-md-4" class="mat-form-field">

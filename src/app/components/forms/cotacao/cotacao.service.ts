@@ -29,13 +29,17 @@ export class CotacaoService {
     console.log("form estatico", this.registrationForm);
   }
   UpdateStep2(form: FormGroup) {
-    this.registrationForm.patchValue({ itens: form.get("itens").value });
+    // console.log("form vazio step2",form);
+
+    this.registrationForm.patchValue({ itens: form.value });
     this.formEstatic$.next(this.registrationForm);
+    //console.log("form recebido em parametro", form); //
+    console.log("form estatico", this.registrationForm);
   }
   UpdateStep3(form: FormGroup) {
     this.registrationForm.patchValue({ dadoscliente: form.value });
     this.formEstatic$.next(this.registrationForm);
-    console.log("form recebido em parametro", form); //
+    // console.log("form recebido em parametro", form); //
     console.log("form estatico", this.registrationForm);
   }
   GetForm() {
@@ -55,7 +59,7 @@ export class CotacaoService {
       itens: this.fb.group({
         tipo: ["", [Validators.required]],
         estado: ["", [Validators.required]],
-        descricao: this.fb.array([this.fb.control("")])
+        descricao: this.fb.array([])
       }),
       dadoscliente: this.fb.group({
         name: [

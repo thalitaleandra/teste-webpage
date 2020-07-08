@@ -9,10 +9,28 @@ import { CotacaoService } from "../cotacao/cotacao.service";
 })
 export class Step3Component implements OnInit {
   constructor(private service: CotacaoService, private fb: FormBuilder) {}
-  @Input() regForm: FormGroup;
+  regForm: FormGroup;
 
   ngOnInit() {
-    this.service.UpdateStep3(this.regForm);
+    this.regForm = this.fb.group({
+      name: [
+        "",
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(100)
+        ]
+      ],
+      email: ["", [Validators.required, Validators.email]],
+      telefone: ["", [Validators.required]],
+      cidade: ["", [Validators.required]],
+      estado: ["", [Validators.required]],
+      cep: ["", [Validators.required]]
+    });
+
+    this.regForm.valueChanges.subscribe(form => {
+      this.service.UpdateStep3(this.regForm);
+    });
   }
 
   // submit() {

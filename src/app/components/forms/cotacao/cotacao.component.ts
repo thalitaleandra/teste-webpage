@@ -37,8 +37,8 @@ export class CotacaoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.service.GetForm().subscribe(form => {
-      console.log(form);
+    this.service.GetForm().subscribe((form: FormGroup) => {
+      this.registrationForm = form;
     });
     this.registrationForm = this.fb.group({
       veiculo: this.fb.group({
@@ -53,9 +53,7 @@ export class CotacaoComponent implements OnInit {
       itens: this.fb.group({
         tipo: ["", [Validators.required]],
         estado: ["", [Validators.required]],
-        descricao: this.fb.array([
-          this.fb.control("")
-        ])
+        descricao: this.fb.array([])
       }),
       dadoscliente: this.fb.group({
         name: [
